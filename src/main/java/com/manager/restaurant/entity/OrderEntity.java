@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="order")
+@Table(name="ordered")
 @Getter
 @Setter
 public class OrderEntity {
@@ -27,7 +27,7 @@ public class OrderEntity {
 	private int employeeId;
 	
 	// Ordered multiple tables
-	private int inventoryStrId;
+	private String inventoryStrId;
 	
 	private long total;
 	
