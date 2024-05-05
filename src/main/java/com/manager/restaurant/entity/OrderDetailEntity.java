@@ -23,6 +23,7 @@ public class OrderDetailEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	// Map 1-1 with OrderEntity
 	private int orderId;
 	
 	private int menuId;
