@@ -2,8 +2,8 @@ package com.manager.restaurant.entity;
 
 import java.time.LocalDate;
 
-import org.hibernate.annotations.CurrentTimestamp;
-import org.hibernate.generator.EventType;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,9 +34,9 @@ public class OrderEntity {
 	// 0: cash, 1: credit card
 	private byte paymentMethod;
 	
-	@CurrentTimestamp(event= EventType.INSERT)
+	@CreationTimestamp
 	private LocalDate createdAt;
-	
-	@CurrentTimestamp(event= {EventType.UPDATE})
+
+	@UpdateTimestamp
 	private LocalDate updatedAt;
 }

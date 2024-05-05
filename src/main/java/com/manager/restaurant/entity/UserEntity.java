@@ -2,8 +2,8 @@ package com.manager.restaurant.entity;
 
 import java.time.LocalDate;
 
-import org.hibernate.annotations.CurrentTimestamp;
-import org.hibernate.generator.EventType;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,10 +14,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="employee")
+@Table(name="user")
 @Getter
 @Setter
-public class EmployeeEntity {
+public class UserEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,11 +28,11 @@ public class EmployeeEntity {
 	private String fullName;
 	private LocalDate birthDay;
 	
-	private byte type;
+	private String role;
 	
-	@CurrentTimestamp(event= EventType.INSERT)
+	@CreationTimestamp
 	private LocalDate createdAt;
-	
-	@CurrentTimestamp(event= {EventType.UPDATE})
+
+	@UpdateTimestamp
 	private LocalDate updatedAt;
 }

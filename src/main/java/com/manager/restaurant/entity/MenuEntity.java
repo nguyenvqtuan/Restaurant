@@ -2,21 +2,25 @@ package com.manager.restaurant.entity;
 
 import java.time.LocalDate;
 
-import org.hibernate.annotations.CurrentTimestamp;
-import org.hibernate.generator.EventType;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name="menu")
+@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 public class MenuEntity {
 
 	@Id
@@ -29,9 +33,9 @@ public class MenuEntity {
 	
 	private String description;
 	
-	@CurrentTimestamp(event= EventType.INSERT)
+	@CreationTimestamp
 	private LocalDate createdAt;
-	
-	@CurrentTimestamp(event= {EventType.UPDATE})
+
+	@UpdateTimestamp
 	private LocalDate updatedAt;
 }
